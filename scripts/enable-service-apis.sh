@@ -5,7 +5,17 @@
 # Import
 source "$(dirname "$0")/_helpers.sh"
 
-SERVICE_APIS=("compute.googleapis.com" "storage.googleapis.com")
+SERVICE_APIS=(\
+  "compute.googleapis.com" \
+  "storage.googleapis.com" \
+  "storage-api.googleapis.com" \
+  "storage-component.googleapis.com" \
+  "servicenetworking.googleapis.com" \
+  "networkmanagement.googleapis.com" \
+  "networksecurity.googleapis.com" \
+  "networkservices.googleapis.com" \
+  "networksubscriptions.googleapis.com"
+)
 
 
 ##########################################################
@@ -17,7 +27,21 @@ SERVICE_APIS=("compute.googleapis.com" "storage.googleapis.com")
 #   None
 ###########################################################
 function check_google_login {
-    # Test 
+    log "INFO" "Check auth login status"
+}
+
+###########################################################
+# Function to enable the listed service APIs
+#
+# Arguments
+#   None
+# Returns:
+#   None
+###########################################################
+function enable_service_api {
+    log "INFO" "Preparing to enable APIs"
+    check_empty_string "${SERVICE_APIS[@]}"
+    gcloud services enable "${SERVICE_APIS[@]}"
 }
 
 ###########################################################
@@ -29,12 +53,14 @@ function check_google_login {
 #   None
 ###########################################################
 function main {
+    # TESTS:
+    #log "INFO" "${SERVICE_APIS[@]}"
     # Log in to GCP
-    check_google_login
+    #check_google_login
     # Select the desired project
     #set_project
     # Enable the listed service APIs
-    #enable_service_api
+    enable_service_api
     log "INFO" "Done"
 }
 
