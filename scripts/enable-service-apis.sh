@@ -5,6 +5,9 @@
 # Import
 source "$(dirname "$0")/_helpers.sh"
 
+SERVICE_APIS=("compute.googleapis.com" "storage.googleapis.com")
+
+
 ##########################################################
 # Function to check login status for GCP
 #
