@@ -1,4 +1,4 @@
-# Project Configuration
+timm Project Configuration
 
 ## Overview
 
@@ -54,6 +54,33 @@ tools.
      compute.googleapis.com  Compute Engine API
      oslogin.googleapis.com  Cloud OS Login API
      ```
+> **Note:**
+>
+> In the `scripts` folder, you can set up multiple service APIs at once.
+> Just make sure to know which APIs you really need.
+
+### Output
+
+Enabled Service APIs can be checked with the following command:
+```bash
+$ gcloud services list --enabled
+
+NAME                                 TITLE
+compute.googleapis.com               Compute Engine API
+edgecache.googleapis.com             Global Edge Cache Service
+iam.googleapis.com                   Identity and Access Management (IAM) API
+iamcredentials.googleapis.com        IAM Service Account Credentials API
+networkmanagement.googleapis.com     Network Management API
+networksecurity.googleapis.com       Network Security API
+networkservices.googleapis.com       Network Services API
+networksubscriptions.googleapis.com  Network Subscriptions
+oslogin.googleapis.com               Cloud OS Login API
+servicenetworking.googleapis.com     Service Networking API
+storage-api.googleapis.com           Google Cloud Storage JSON API
+storage-component.googleapis.com     Cloud Storage
+storage.googleapis.com               Cloud Storage API
+```
+
 
 ## References
 

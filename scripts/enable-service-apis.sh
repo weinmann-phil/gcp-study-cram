@@ -14,7 +14,8 @@ SERVICE_APIS=(\
   "networkmanagement.googleapis.com" \
   "networksecurity.googleapis.com" \
   "networkservices.googleapis.com" \
-  "networksubscriptions.googleapis.com"
+  "networksubscriptions.googleapis.com" \
+  "iam.googleapis.com"
 )
 
 
